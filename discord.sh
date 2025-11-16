@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
+export BYPASS_DELAY=50 BYPASS_FAKE_PACKETS=2 LD_PRELOAD=./libdiscordbypass.so
+server=--proxy-server=socks5://127.0.0.1:9050
 if command -v discord
 then
-LD_PRELOAD=./libdiscordbypass.so discord --proxy-server=socks5://127.0.0.1:9050
+discord $server
 fi
 if command -v vesktop
 then
-LD_PRELOAD=./libdiscordbypass.so vesktop --proxy-server=socks5://127.0.0.1:9050
+vesktop $server
 fi
 if command -v legcord
 then
-LD_PRELOAD=./libdiscordbypass.so legcord --proxy-server=socks5://127.0.0.1:9050
+legcord $server
 fi
 if command -v webcord
 then
-LD_PRELOAD=./libdiscordbypass.so webcord --proxy-server=socks5://127.0.0.1:9050
+webcord $server
 fi
 if command -v goofcord
 then
-LD_PRELOAD=./libdiscordbypass.so goofcord --proxy-server=socks5://127.0.0.1:9050
+goofcord $server
 fi
