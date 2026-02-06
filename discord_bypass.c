@@ -56,10 +56,7 @@ static int fake_packets;
 __attribute__((constructor))
 static void init_lib(void) {
     delay = get_int_from_env("BYPASS_DELAY", 50, 0, 1000);
-    printf("[discord_linux_bypass] set delay to %dms\n", delay);
-
     fake_packets = get_int_from_env("BYPASS_FAKE_PACKETS", 2, 0, 20);
-    printf("[discord_linux_bypass] set fake packets to %d\n", fake_packets);
 }
 
 // used in custom clients
